@@ -24,7 +24,9 @@ class UpdateTodoItemRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id' => ['required'],
+            'description' => ['required', 'string', 'min:5', 'max:255'],
+            'day_of_week' => ['required', 'integer', 'min:0', 'max:6'],
         ];
     }
 }
