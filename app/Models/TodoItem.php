@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class TodoItem extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'description',
+        'day_of_week'
+    ];
 }

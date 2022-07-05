@@ -13,7 +13,7 @@ class StoreTodoItemRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class StoreTodoItemRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'description' => ['required', 'string', 'min:5', 'max:255'],
+            'day_of_week' => ['required', 'integer', 'min:0', 'max:6'],
         ];
     }
 }

@@ -19,3 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/todo', [TodoItemController::class, 'index']);
+Route::post('/todo', [TodoItemController::class, 'store']);
+Route::patch('/todo/{id}', [TodoItemController::class, 'update']);
