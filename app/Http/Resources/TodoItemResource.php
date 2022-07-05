@@ -15,11 +15,12 @@ class TodoItemResource extends JsonResource
      */
     public function toArray($request)
     {
-//        $daysOfWeek = Carbon::getDays();
+        $daysOfWeek = Carbon::getDays();
         return [
           'id' => $this->id,
           'description' => $this->description,
           'day_of_week' => $this->day_of_week,
+          'day_name' => $daysOfWeek[$this->day_of_week],
           'created_at' => $this->created_at,
           'updated_at' => $this->updated_at,
         ];

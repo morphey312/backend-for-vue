@@ -13,7 +13,7 @@ class UpdateTodoItemRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,7 @@ class UpdateTodoItemRequest extends FormRequest
      */
     public function rules()
     {
+        $requestData = request()->all();
         return [
             'id' => ['required'],
             'description' => ['required', 'string', 'min:5', 'max:255'],
