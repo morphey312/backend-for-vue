@@ -10,6 +10,7 @@ class TodoItem extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'description',
         'day_of_week'
     ];

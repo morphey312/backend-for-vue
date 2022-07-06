@@ -20,4 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::get('/todo', [TodoItemController::class, 'index']);
 Route::post('/todo', [TodoItemController::class, 'store']);
-Route::patch('/todo/{id}', [TodoItemController::class, 'update']);
+Route::patch('/todo/{todoItem}', [TodoItemController::class, 'update']);
+Route::delete('/todo/{todoItem}', [TodoItemController::class, 'destroy']);
