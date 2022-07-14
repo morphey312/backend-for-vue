@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateTodoItemRequest;
 use App\Http\Resources\TodoItemCollection;
 use App\Http\Resources\TodoItemResource;
 use App\Models\TodoItem;
+use Illuminate\Http\Request;
 
 class TodoItemController extends Controller
 {
@@ -91,5 +92,11 @@ class TodoItemController extends Controller
     {
         $todoItem->delete();
         return response()->noContent();
+    }
+
+    public function storeFile(Request $request)
+    {
+        $data = $request->all();
+        return response()->json($request->all());
     }
 }
