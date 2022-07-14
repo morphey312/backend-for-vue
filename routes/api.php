@@ -26,4 +26,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/todo', [TodoItemController::class, 'store']);
     Route::patch('/todo/{todoItem}', [TodoItemController::class, 'update']);
     Route::delete('/todo/{todoItem}', [TodoItemController::class, 'destroy']);
+    Route::post('/file', [TodoItemController::class, 'storeFile']);
 });
